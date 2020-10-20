@@ -45,4 +45,48 @@ fi
 # -------------------------------------------
 #        Structures itératives  
 # -------------------------------------------
+# boucle for sur chaines
+for var in "valeur1" "valeur2" "valeur2"                                        
+do                                       
+    echo "la variable vaut $var"                                                
+done
+# boucle for sur resultat d'une commande
+for file in $(ls)                                                               
+do                                                                              
+    echo "fichier $file trouvé"                                                 
+done  
+# boucle for avec seq 
+for i in $(seq 1 10)                                                            
+do                                                                              
+    echo ${i}                                                                   
+done 
+for i in $(seq 1 2 10)                                                          
+do                                                                              
+    echo ${i}                                                                   
+done 
+# boucle for synataxe du C
+for ((i=1;i<=5;i++))                                                            
+do                                                                              
+    echo ${i}                                                                   
+done
+
+#while lire un fichier ligne par ligne
+n=1                                                                             
+while read line                                                                 
+do                                                                              
+    echo "$n : $line"                                                         
+    n=$((n+1))                                                                  
+done < fic1          
+# while interaction utilisateur
+while [ "$choix" != "q" ]                                                       
+do                                                                              
+    echo "Tapez q pour quitter la boucle"                                            
+    read choix                                                                  
+done 
+
+# UNTIL
+until false                                                                     
+do                                                                              
+    echo "je suis une boucle infinie (Ctrl+C == kill)"                                           
+done   
 

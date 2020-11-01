@@ -1,5 +1,11 @@
 #!/bin/bash
-for i in $(seq 1 100)
+#4.
+nbfileh=0
+rep=$1
+for fileh in $(ls ${rep}/*.h)
 do
-    echo ${i}
+    nbfileh=$((nbfileh+1))
 done
+echo "Nombre de fichier header dans ${rep} : ${nbfileh}"
+
+

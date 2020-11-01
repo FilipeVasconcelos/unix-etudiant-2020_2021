@@ -1,47 +1,34 @@
 #!/bin/bash
-# -------------------------------------------
-if [ 1 = 0 ] 
-then
-    echo vrai
-else
-    echo faux
-fi
-# -------------------------------------------
-var=$(date +%A)
-echo $var
-if [ $var == "Monday" ] 
-then
-    echo "It is Monday"
-elif [ $var != "Sunday" ]
-then
-    echo "It is a working day"
-else
-    echo "It is not Monday"
-fi
-# -------------------------------------------
-if [ -z $var2 ]
-then
-    echo var2 est vide 
-fi
-# -------------------------------------------
-if [ -n $var ]
-then
-    echo var est non vide 
-fi
-# -------------------------------------------
-for jour in "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday"
+# ---------------------------------------------------------
+for var in "v1" "v2" "v3"
 do
-    echo "It's ${jour}"
+    echo ${var}
 done
-
-for i in 1 2 3 4
+for var in $(seq 10)   
 do
-    echo ${i}
-    mkdir rep${i}
-    cd rep${i}
-    touch fic${i}
+    echo ${var}
+    if [ ! -d rep${var} ]
+    then
+        mkdir rep${var}
+    fi
+    cd rep${var}
+    touch fichier${var}
+    echo "Bonjour fichier${var}" >> fichier${var}
     cd ..
 done
+
+for ((i=0;i<100;i++))
+do
+    echo ${i}
+done
+
+exit 0
+
+
+
+
+
+
 
 
 

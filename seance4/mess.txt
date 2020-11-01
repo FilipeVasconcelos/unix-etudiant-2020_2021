@@ -1,0 +1,1 @@
+cp: cannot stat 'fichier2': No such file or directory

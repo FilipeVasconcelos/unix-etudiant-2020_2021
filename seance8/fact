@@ -1,0 +1,51 @@
+#!/bin/bash
+
+
+
+usage() {
+    echo "----------------------------------------"
+    echo "Script de calcul de la factorielle de n "
+    echo "----------------------------------------"
+    echo "Usage $0 [chaine] [n] "
+    echo "chaine : iter ou recu"
+    echo "n      : un nombre entier"
+}
+
+factiter() {
+    n=$1
+    res=1
+    for((i=1;i<$((n+1));i++))
+    do
+        res=$((res*${i}))
+    done
+    echo $res 
+}
+#  factrecu n =  n * factrecu n-1 = n * (n-1) * factrecu n-2
+
+factrecu() {
+    if (( $1 == 0 )) 
+    then
+        echo 1
+    else
+        #       n *  $( factrecu n-1 ) 
+        echo $(($1*$(factrecu $(($1-1))))) 
+    fi
+}
+
+[ $# -ne 2 ] && usage
+version=$1
+n=$2
+if [ ${version} = "iter" ] 
+then
+    res=$(factiter $n)
+fi
+if [ ${version} = "recu" ] 
+then
+    res=$(factrecu $n)
+fi
+echo "$n ! = $res"
+
+
+
+
+

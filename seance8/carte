@@ -1,0 +1,4 @@
+#!/bin/bash
+valeurs=("As" $(seq 7 10) "J" "Q" "K")
+couleurs=("♠" "♣" "♥" "♦")
+echo ${valeurs[$((RANDOM%${#valeurs[@]}))]} ${couleurs[$((RANDOM%${#couleurs[@]}))]}

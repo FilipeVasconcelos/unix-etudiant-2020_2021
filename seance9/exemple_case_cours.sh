@@ -13,7 +13,7 @@ case $1 in
 "samedi"|"Sat")
     echo "$1 on est déjà samedi !";;
 "dimanche"|"Sun")
-    echo "$1 ... rien!";;
-"*")
+   echo "$1 ... rien!";;
+*)
     echo "hein ?";;
 esac
